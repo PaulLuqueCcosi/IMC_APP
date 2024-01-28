@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Activitys</string>
+    <string name="btnStart">Enviar</string>
+    <string name="title_activity_result">ResultActivity</string>
 </resources>

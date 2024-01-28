@@ -1,18 +1,13 @@
 package com.paul.activitys
 
-import android.media.metrics.LogSessionId
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.paul.activitys.ui.theme.ActivitysTheme
+
 
 class MainActivity : ComponentActivity() {
     val TAG : String = "mainActivity";
@@ -20,16 +15,20 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "On create");
 
-        setContent {
-            ActivitysTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+        setContentView(R.layout.main_activity)
+
+        val btnStart = findViewById<Button>(R.id.btnStart)
+        val etName = findViewById<EditText>(R.id.etName)
+
+        btnStart.setOnClickListener{
+            val name = etName.text.toString()
+            Log.d(TAG, "Hola ${name}")
+            val duration = Toast.LENGTH_SHORT
+            val toast = Toast.makeText(this, etName.text.toString(), duration) // in Activity
+            toast.show()
+            val intent = Intent(this, ResultActivity::class.java)
+            intent.putExtra("TEXT_NAME", name)
+            startActivity(intent)
         }
     }
 
@@ -66,18 +65,3 @@ class MainActivity : ComponentActivity() {
 
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ActivitysTheme {
-        Greeting("Android")
-    }
-}
