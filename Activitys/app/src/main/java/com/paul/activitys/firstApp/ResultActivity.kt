@@ -1,8 +1,9 @@
-package com.paul.activitys
+package com.paul.activitys.firstApp
 
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.ComponentActivity
+import com.paul.activitys.R
 
 
 class ResultActivity : ComponentActivity() {
