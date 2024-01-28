@@ -3,4 +3,8 @@
     <string name="btnStart">Enviar</string>
     <string name="title_activity_result">ResultActivity</string>
     <string name="title_activity_menu">MenuActivity</string>
+
+    <string name="title_activity_IMC">IMC_Activity</string>
+    <string name="male">Hombre</string>
+    <string name="female">Mujer</string>
 </resources>

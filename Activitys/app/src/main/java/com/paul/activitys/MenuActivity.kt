@@ -4,17 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.paul.activitys.IMCapp.IMC_activity
+import com.paul.activitys.IMCapp.IMCActivity
 import com.paul.activitys.firstApp.MainActivity
-import com.paul.activitys.ui.theme.ActivitysTheme
 
 class MenuActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +28,7 @@ class MenuActivity : ComponentActivity() {
     }
 
     private fun goToIMCapp() {
-        val intent = Intent(this, IMC_activity::class.java)
-        startActivity(intent)
+        val intent1 = Intent(this, IMCActivity::class.java)
+        startActivity(intent1)
     }
 }
