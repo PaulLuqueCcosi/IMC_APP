@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.paul.activitys.IMCapp.IMC_activity
 import com.paul.activitys.firstApp.MainActivity
 import com.paul.activitys.ui.theme.ActivitysTheme
 
@@ -21,14 +22,22 @@ class MenuActivity : ComponentActivity() {
         setContentView(R.layout.menu_activity)
 
         val btnSaludar = findViewById<Button>(R.id.btnSaludarApp)
+        val btnIMCApp = findViewById<Button>(R.id.btnIMCApp)
 
         btnSaludar.setOnClickListener { goToSaludarapp() }
+        btnIMCApp.setOnClickListener { goToIMCapp() }
+
 
     }
 
 
-    fun goToSaludarapp() {
+    private fun goToSaludarapp() {
         val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun goToIMCapp() {
+        val intent = Intent(this, IMC_activity::class.java)
         startActivity(intent)
     }
 }
