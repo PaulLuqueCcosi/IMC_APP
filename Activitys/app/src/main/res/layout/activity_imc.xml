@@ -29,8 +29,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_male"
-                 />
+                android:src="@drawable/ic_male" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -65,8 +64,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_femlae"
-                 />
+                android:src="@drawable/ic_femlae" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -105,13 +103,30 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="120 cm"
-                android:textColor="@color/white"
-                android:textSize="50dp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/tvHeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="150"
+                    android:textColor="@color/white"
+                    android:textSize="50dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="cm"
+                    android:textColor="@color/white"
+                    android:textSize="50dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
             <SeekBar
                 android:id="@+id/sb_height"
@@ -120,6 +135,8 @@
                 android:layout_marginHorizontal="13dp"
                 android:layout_marginVertical="10dp"
                 android:max="200"
+                android:min="100"
+                android:progress="150"
                 android:outlineSpotShadowColor="@color/purple_200"
                 android:progressTint="@color/purple_200" />
 
@@ -156,13 +173,30 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="120"
-                android:textColor="@color/white"
-                android:textSize="40dp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="60"
+                    android:textColor="@color/white"
+                    android:textSize="40dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="kg"
+                    android:textColor="@color/white"
+                    android:textSize="40dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -174,20 +208,20 @@
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/btnPlusWeight"
                     android:layout_width="wrap_content"
-                    android:src="@drawable/ic_plus"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:backgroundTint="@color/purple_500"
-                    android:contentDescription="TODO" />
+                    android:contentDescription="TODO"
+                    android:src="@drawable/ic_plus" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/btnMinusWeight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_minus"
                     android:layout_marginStart="10dp"
                     android:backgroundTint="@color/purple_500"
-                    android:contentDescription="TODO" />
+                    android:contentDescription="TODO"
+                    android:src="@drawable/ic_minus" />
             </LinearLayout>
         </LinearLayout>
 
@@ -199,9 +233,9 @@
         android:layout_width="0dp"
         android:layout_height="180dp"
 
-        android:layout_marginTop="20dp"
-
         android:layout_marginStart="8dp"
+
+        android:layout_marginTop="20dp"
         app:cardBackgroundColor="@color/background_component"
         app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -224,6 +258,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvAge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="18"
@@ -241,20 +276,20 @@
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/btnPlusAge"
                     android:layout_width="wrap_content"
-                    android:src="@drawable/ic_plus"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:backgroundTint="@color/purple_500"
-                    android:contentDescription="TODO" />
+                    android:contentDescription="TODO"
+                    android:src="@drawable/ic_plus" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/btnMinusAge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_minus"
                     android:layout_marginStart="10dp"
                     android:backgroundTint="@color/purple_500"
-                    android:contentDescription="TODO" />
+                    android:contentDescription="TODO"
+                    android:src="@drawable/ic_minus" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -262,18 +297,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cvAge">
+
         <Button
-            android:layout_width="match_parent"
             android:id="@+id/btnCalculateIMC"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/purple_500"
-            android:textSize="20dp"
-            android:text="@string/btn_caluclateIMC"/>
+            android:text="@string/btn_caluclateIMC"
+            android:textSize="20dp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
