@@ -20,6 +20,14 @@ class IMCActivity : AppCompatActivity() {
     private var height: Int = 190
     private var age: Int = 18
     private var weight: Int = 60
+    private val MIN_WEIGHT = 30;
+    private val MIN_AGE = 2;
+    private val MIN_AGE_CHID = 19;
+    private val MAX_AGE = 110;
+    private val MAX_WEIGHT = 160;
+
+
+
 
 
     private lateinit var textViewHeight: TextView
@@ -102,21 +110,37 @@ class IMCActivity : AppCompatActivity() {
     }
 
     private fun minusAge() {
+        if(age <= MIN_AGE){
+            Toast.makeText(this,  "Edad Minima", Toast.LENGTH_SHORT).show()
+            return
+        }
         age--
         setAge()
     }
 
     private fun plusAge() {
+        if(age >= MAX_AGE){
+            Toast.makeText(this,  "Edad Maxima", Toast.LENGTH_SHORT).show()
+            return
+        }
         age++
         setAge()
     }
 
     private fun minusWeight() {
+        if(weight <= MIN_WEIGHT){
+            Toast.makeText(this,  "Peso Minimo", Toast.LENGTH_SHORT).show()
+            return
+        }
         weight--
         setWeight()
     }
 
     private fun plusWeight() {
+        if(weight >= MAX_WEIGHT){
+            Toast.makeText(this,  "Peso Maximo", Toast.LENGTH_SHORT).show()
+            return
+        }
         weight++
         setWeight()
     }
