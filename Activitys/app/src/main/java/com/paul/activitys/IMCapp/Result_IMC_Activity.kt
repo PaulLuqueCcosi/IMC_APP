@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.ui.graphics.Color
 import androidx.core.content.ContextCompat
 import com.paul.activitys.R
 
@@ -14,8 +12,8 @@ class Result_IMC_Activity : AppCompatActivity() {
 
     private lateinit var imc: String
     private var genderIsMale: Boolean = false
-    private lateinit var height: String;
-    private lateinit var weight: String;
+    private lateinit var height: String
+    private lateinit var weight: String
 
     private lateinit var photo: ImageView
     private lateinit var tvResult: TextView
@@ -68,7 +66,7 @@ class Result_IMC_Activity : AppCompatActivity() {
         }
 
 
-        return estado;
+        return estado
     }
 
     private fun initComponents() {
@@ -81,18 +79,19 @@ class Result_IMC_Activity : AppCompatActivity() {
 
 
         tvResult = findViewById(R.id.tvResult)
-        var estado: EstadoPeso = checkIMC(imc, genderIsMale)
-        tvResult.setText(estado.nombre)
+        val estado: EstadoPeso = checkIMC(imc, genderIsMale)
+        tvResult.text = estado.nombre
         tvResult.setTextColor(ContextCompat.getColor(this, estado.colorId))
 
         tvIMC = findViewById(R.id.tvIMC)
-        tvIMC.setText(imc.toString())
+        tvIMC.text = imc
 
         tvText = findViewById(R.id.tvText)
-        tvText.setText(estado.descripcion)
+        tvText.text = estado.descripcion
 
         tvInfo = findViewById(R.id.tvInfo)
-        tvInfo.setText("Weight : $weight kg., Height: $height cm.")
+        val info = "Weight : $weight kg., Height: $height cm."
+        tvInfo.text = info
         buttonRecalculate = findViewById(R.id.btRecalculate)
 
     }
@@ -115,9 +114,7 @@ class Result_IMC_Activity : AppCompatActivity() {
 class EstadoPeso(
     val nombre: String,
     val descripcion: String,
-    val rangoMinHombre: Double,
     val rangoMaxHombre: Double,
-    val rangoMinMujer: Double,
     val rangoMaxMujer: Double,
     val colorId: Int
 ) {
@@ -131,54 +128,42 @@ class ClasificacionPeso {
         val POR_DEBAJO = EstadoPeso(
             "Por Debajo del Peso",
             "Por debajo del rango saludable de peso",
-            0.0,
             18.4,
-            0.0,
             17.9,
             R.color.por_debajo_color
         )
         val SALUDABLE = EstadoPeso(
             "Saludable",
             "Rango saludable de peso",
-            18.5,
             24.9,
-            18.0,
             24.9,
             R.color.saludable_color
         )
         val SOBREPESO = EstadoPeso(
             "Sobrepeso",
             "Por encima del rango saludable de peso",
-            25.0,
             29.9,
-            25.0,
             29.9,
             R.color.sobrepeso_color
         )
         val OBESIDAD_I = EstadoPeso(
             "Obesidad I",
             "Obesidad grado I",
-            30.0,
             34.9,
-            30.0,
             34.9,
             R.color.obesidad_i_color
         )
         val OBESIDAD_II = EstadoPeso(
             "Obesidad II",
             "Obesidad grado II",
-            35.0,
             39.9,
-            35.0,
             39.9,
             R.color.obesidad_ii_color
         )
         val OBESIDAD_III = EstadoPeso(
             "Obesidad III",
             "Obesidad grado III",
-            40.0,
             Double.MAX_VALUE,
-            40.0,
             Double.MAX_VALUE,
             R.color.obesidad_iii_color
         )

@@ -308,7 +308,8 @@
             android:id="@+id/btnCalculateIMC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/purple_500"
+            android:background="@color/purple_700"
+            android:textColor="@color/white"
             android:text="@string/btn_caluclateIMC"
             android:textSize="20dp" />
     </LinearLayout>

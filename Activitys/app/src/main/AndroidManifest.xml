@@ -21,7 +21,7 @@
             android:name=".IMCapp.IMCActivity"
             android:exported="false"
             android:label="@string/title_activity_IMC"
-            android:theme="@style/Theme.AppCompat" />
+            android:theme="@style/Theme.Activitys" />
         <activity
             android:name=".MenuActivity"
             android:exported="true"
