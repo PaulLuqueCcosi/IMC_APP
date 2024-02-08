@@ -1,5 +1,6 @@
 package com.paul.activitys.IMCapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.SeekBar
@@ -11,6 +12,8 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.paul.activitys.R
+import com.paul.activitys.firstApp.ResultActivity
+import java.text.DecimalFormat
 
 
 class IMCActivity : AppCompatActivity() {
@@ -106,7 +109,17 @@ class IMCActivity : AppCompatActivity() {
 
     private fun calculateIMC() {
         val imc = weight / (height.toDouble() / 100 * height.toDouble() / 100)
-        Toast.makeText(this,  imc.toString(), Toast.LENGTH_LONG).show()
+        val intent = Intent(this, Result_IMC_Activity::class.java)
+        val df = DecimalFormat("#.##")
+        val roundIMC = df.format(imc)
+
+        intent.putExtra("IMC", roundIMC)
+        intent.putExtra("GENDER", isMaleSelected)
+        intent.putExtra("WEIGHT", weight.toString())
+        intent.putExtra("HEIGHT", height.toString())
+
+        startActivity(intent)
+//        Toast.makeText(this,  imc.toString(), Toast.LENGTH_LONG).show()
     }
 
     private fun minusAge() {
