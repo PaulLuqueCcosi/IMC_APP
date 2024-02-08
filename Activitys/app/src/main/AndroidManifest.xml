@@ -17,13 +17,9 @@
             android:exported="false"
             android:label="@string/title_activity_result_imc"
             android:theme="@style/Theme.Activitys" />
+
         <activity
             android:name=".IMCapp.IMCActivity"
-            android:exported="false"
-            android:label="@string/title_activity_IMC"
-            android:theme="@style/Theme.Activitys" />
-        <activity
-            android:name=".MenuActivity"
             android:exported="true"
             android:label="@string/title_activity_menu"
             android:theme="@style/Theme.Activitys">
@@ -33,15 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".firstApp.ResultActivity"
-            android:exported="false"
-            android:label="@string/title_activity_result"
-            android:theme="@style/Theme.Activitys" />
-        <activity
-            android:name=".firstApp.MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Activitys" />
+
     </application>
 
 </manifest>

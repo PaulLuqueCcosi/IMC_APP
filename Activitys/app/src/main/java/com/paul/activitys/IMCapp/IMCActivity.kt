@@ -12,7 +12,6 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.paul.activitys.R
-import com.paul.activitys.firstApp.ResultActivity
 import java.text.DecimalFormat
 
 
@@ -23,11 +22,10 @@ class IMCActivity : AppCompatActivity() {
     private var height: Int = 190
     private var age: Int = 18
     private var weight: Int = 60
-    private val MIN_WEIGHT = 30;
-    private val MIN_AGE = 2;
-    private val MIN_AGE_CHID = 19;
-    private val MAX_AGE = 110;
-    private val MAX_WEIGHT = 160;
+    private val MIN_WEIGHT = 30
+    private val MIN_AGE = 2
+    private val MAX_AGE = 110
+    private val MAX_WEIGHT = 160
 
 
 
@@ -159,14 +157,14 @@ class IMCActivity : AppCompatActivity() {
     }
 
     private fun selectMale() {
-        isMaleSelected = true;
-        isFemaleSelecd = false;
+        isMaleSelected = true
+        isFemaleSelecd = false
         setGenderColor()
     }
 
     private fun selectFemale() {
-        isMaleSelected = false;
-        isFemaleSelecd = true;
+        isMaleSelected = false
+        isFemaleSelecd = true
         setGenderColor()
     }
 
